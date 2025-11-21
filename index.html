@@ -4,71 +4,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Mario Bros Plumbing - Encanadores profissionais para resolver seus problemas com estilo">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Mario Bros Plumbing - Encanadores Profissionais</title>
     <link rel="stylesheet" href="style.css">
-
-
-    <title>Mario Bros</title>
 </head>
 
 <body>
-    <div class="mascara-formulario" onclick="esconderForm()"></div>
+    <!-- Máscara do formulário -->
+    <div class="mascara-formulario" onclick="esconderForm()" role="button" tabindex="0" aria-label="Fechar formulário">
+    </div>
 
-
-    <div class="mascara-formulario" onclick="esconderForm()"></div>
-
-    <form class="formulario-fale-conosco" onsubmit="enviarForm(event)">
-        <input placeholder="Seu nome" type="text" name="nome">
-        <input placeholder="Seu telefone" type="tel" name="telefone">
-        <textarea placeholder="Digite seu problema aqui..." name="duvida"></textarea>
-        <button type="submit">Pedir Orçamento</button>
+    <!-- Formulário de contato -->
+    <form class="formulario-fale-conosco" onsubmit="enviarForm(event)" aria-labelledby="form-title">
+        <h2 id="form-title" class="sr-only">Formulário de Contato</h2>
+        <input placeholder="Seu nome" type="text" name="nome" aria-label="Digite seu nome" required>
+        <input placeholder="Seu telefone" type="tel" name="telefone" aria-label="Digite seu telefone" required>
+        <textarea placeholder="Digite seu problema aqui..." name="duvida" aria-label="Descreva seu problema"
+            required></textarea>
+        <button type="submit" aria-label="Enviar solicitação de orçamento">Pedir Orçamento</button>
     </form>
-    
 
-    <div class="header">
+    <!-- Header -->
+    <header class="header">
+        <img src="assets/img/logo-header-mario.png" alt="Logo Mario Bros Plumbing" loading="lazy">
+        <nav aria-label="Navegação principal">
+            <a href="#home" aria-label="Ir para Home">Home</a>
+            <a href="nossos-servicos.html" aria-label="Ver nossos serviços">Nossos Serviços</a>
+            <a href="#contato" onclick="cliqueiNoFaleConosco()" aria-label="Abrir formulário de contato">Fale
+                Conosco</a>
+        </nav>
+    </header>
 
-        <img src="assets/img/logo-header-mario.png" alt="logo header mario">
-        <a href="#">Home</a>
-        <a href="nossos-servicos.html">Nossos Serviços</a>
-        <a onclick="cliqueiNoFaleConosco()">Fale Conosco</a>
-    </div>
-
-
-    <div class="caixa-mae">
+    <!-- Conteúdo Principal -->
+    <main class="caixa-mae">
         <div class="caixa-principal">
-            <img src="assets/img/logo-principal.png" alt="Logo do mario bros" class="logo-mario">
+            <img src="assets/img/logo-principal.png" alt="Logo principal Mario Bros" class="logo-mario" loading="lazy">
+
             <p class="texto-pequeno">
-                Encanadores Mario & Luigi - Resolvendo seus problemas com Estilo!</p>
+                Encanadores Mario & Luigi - Resolvendo seus problemas com Estilo!
+            </p>
+
             <p class="texto-longo">
-                Você se encontra em uma situação de emergência com encanamento? Vazamantos inesperados, canos entupidos
-                ou
-                torneiras que não param de pingar? Não se preocupe, porque estamos aqui para salvar o dia! Apresentamos
-                a
-                vocês
-                os encanadores mais famosos do Reino dos Cogumelos, Mario e Luigi!.</p>
+                Você se encontra em uma situação de emergência com encanamento? Vazamentos inesperados, canos entupidos
+                ou torneiras que não param de pingar? Não se preocupe, porque estamos aqui para salvar o dia!
+                Apresentamos
+                a vocês os encanadores mais famosos do Reino dos Cogumelos, Mario e Luigi!
+            </p>
 
-            <button onclick="mostrarForm()">Entre em contato</button>
+            <button type="button" onclick="mostrarForm()" aria-label="Abrir formulário de contato">Entre em
+                contato</button>
         </div>
 
-        <div>
-            <img src="assets/img/mario-luigi-personagem.png" alt="logo mario e luigi" class="imagem-mario-luigi">
+        <div class="caixa-imagem">
+            <img src="assets/img/mario-luigi-personagem.png" alt="Personagens Mario e Luigi prontos para o serviço"
+                class="imagem-mario-luigi" loading="lazy">
         </div>
-    </div>
+    </main>
 
-
-    <div class="caixa-video">
-        <video src="assets/img/video-servicos-mario.mp4" autoplay muted loop></video>
+    <!-- Vídeo de fundo -->
+    <div class="caixa-video" aria-hidden="true">
+        <video src="assets/img/video-servicos-mario.mp4" autoplay muted loop
+            aria-label="Vídeo de demonstração dos serviços"></video>
         <div class="mascara"></div>
     </div>
 
-    <a href="" class="link-whatsapp" aria-label="Fale conosco pelo WhatsApp">
-
-        <img src="assets/img/whatsapp-icon.png" alt="link para o whatsapp">
+    <!-- Link WhatsApp -->
+    <a href="https://wa.me/seu-numero" class="link-whatsapp" target="_blank" rel="noopener noreferrer"
+        aria-label="Fale conosco pelo WhatsApp">
+        <img src="assets/img/whatsapp-icon.png" alt="Ícone do WhatsApp" loading="lazy">
     </a>
 
-
+    <script src="scripts.js"></script>
 </body>
-<script src="scripts.js"></script>
-
-
 
 </html>
